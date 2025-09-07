@@ -12,12 +12,12 @@ export const CircleOutlinedButton = ({ className }) => (
 );
 
 // Twitter Icon
-export const BlackCircleButton = ({ className }) => (
+export const BlackCircleButton = ({ className ,text}) => (
   <button className="cursor-pointer flex items-center gap-2 px-5 py-2 bg-black text-gray-300 rounded-full text-sm font-medium hover:bg-gray-900 transition">
     <span className="text-[#CE7D63]">
       <UpArrowIcon />
     </span>
-    KNOW MORE
+    {text}
   </button>
 );
 
@@ -30,10 +30,10 @@ export const RoundedRectangle = ({ className }) => (
   </button>
 );
 
-export const FilledOrangeSmallButton = ({ className }) => (
-  <button className="cursor-pointer px-4 py-2 bg-[#CE7D63] text-white rounded-md text-sm font-medium hover:bg-[#d46c47] transition">
-    SOLUTION
-  </button>
+export const FilledOrangeSmallButton = ({ className , text }) => (
+  <a href="#" className="cursor-pointer text-center px-4 py-2 bg-[#CE7D63] text-white rounded-md text-sm font-medium hover:bg-[#d46c47] transition">
+    {text}
+  </a >
 );
 
 export const MinimalStyleButton = ({ className }) => (

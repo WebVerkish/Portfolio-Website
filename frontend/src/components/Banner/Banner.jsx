@@ -158,7 +158,7 @@ export default function Banner() {
           </div>
           <div className="bg-[#1a1a1a] rounded-lg text-center flex flex-col justify-center">
             <span className="flex items-center justify-center gap-2">
-              <BlackCircleButton />
+              <BlackCircleButton text="Know More"/>
             </span>
           </div>
         </div>
