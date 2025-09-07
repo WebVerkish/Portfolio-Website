@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { CircleArrowIcon } from "../Icons";
-import { BlackCircleButton, CircleOutlinedButton } from "../buttons";
+import { BlackCircleButton, CircleOutlinedButton } from "../Buttons";
 
 export default function Banner() {
   return (
