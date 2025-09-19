@@ -16,6 +16,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
     { path: '/users', label: 'Users', icon: Users },
     { path: '/analytics', label: 'Analytics', icon: BarChart3 },
     { path: '/cold-email', label: 'Cold Emails Status', icon: Mail },
+    { path: '/email-manage', label: 'Emails', icon: Mail },
     { path: '/settings', label: 'Settings', icon: Settings },
     { path: '/edit-web-content', label: 'Edit Web Content', icon: Settings },
   ];

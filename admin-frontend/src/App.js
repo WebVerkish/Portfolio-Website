@@ -12,6 +12,7 @@ import ColdEmailStats from "./pages/ColdEmailStats";
 import EditWebContent from "./pages/EditWebContent";
 import Login from "./pages/Login";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import EmailCampaignManager from "./components/emails/EmailCampaignManager";
 import "./App.css";
 
 function AdminLayout() {
@@ -39,6 +40,7 @@ function AdminLayout() {
             <Route path="/users" element={<Users />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/cold-email" element={<ColdEmailStats />} />
+            <Route path="/email-manage" element={<EmailCampaignManager />} />
             <Route
               path="/settings"
               element={<Settings darkMode={darkMode} setDarkMode={setDarkMode} />}
