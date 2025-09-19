@@ -22,8 +22,15 @@ const UserDropdown = () => {
 
 
   };
+
+  const [adminName, setAdminName] = useState("Admin User");
+  const [adminEmail, setAdminEmail] = useState("Admin User");
     // Close dropdown on outside click
     useEffect(() => {
+        const userName = localStorage.getItem("admin-user") ? JSON.parse(localStorage.getItem("admin-user")).name : "Admin User";
+       const adminEmail = localStorage.getItem("admin-user") ? JSON.parse(localStorage.getItem("admin-user")).email : "ankit@admin.com";
+        setAdminName(userName.toString()); // Debugging line  
+        setAdminEmail(adminEmail.toString());
         const handleClickOutside = (e) => {
             if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
                 setOpen(false);
@@ -44,7 +51,7 @@ const UserDropdown = () => {
                     <User size={20} />
                 </div>
                 <div className="user-info">
-                    <span className="user-name">John Doe</span>
+                    <span className="user-name">{adminName}</span>
                     <span className="user-role">Administrator</span>
                 </div>
 
@@ -53,8 +60,8 @@ const UserDropdown = () => {
             {open && (
                 <div className="dropdown-menu">
                     <div className="dropdown-header">
-                        <p className="name">Admin User</p>
-                        <p className="email">admin@nova.com</p>
+                        <p className="name">{adminName}</p>
+                        <p className="email">{adminEmail}</p>
                     </div>
                     <div className="dropdown-item">
                         <User size={16} style={{ marginRight: 8 }} /> Profile

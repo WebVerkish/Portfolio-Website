@@ -59,6 +59,7 @@ export default function Login() {
       if (!response.ok) throw new Error(data?.message || "Login failed");
 
       localStorage.setItem("admin-token", data.result.token);
+      localStorage.setItem("admin-user", JSON.stringify(data.result.user));
       // showToast({ content: "Welcome back!", type: "success" });
       toast.success("Welcome back!");
       navigate("/admin/dashboard");

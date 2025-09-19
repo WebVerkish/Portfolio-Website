@@ -8,7 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
-import ColdEmailStats from "./pages/ColdEmailStats";
+import ColdEmailStats from "./components/emails/ColdEmailStats";
 import EditWebContent from "./pages/EditWebContent";
 import Login from "./pages/Login";
 import ProtectedRoute from "./pages/ProtectedRoute";

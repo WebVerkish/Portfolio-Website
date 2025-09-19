@@ -1,5 +1,13 @@
 import React from 'react';
-import { Mail, Percent, MousePointerClick, Reply, TrendingUp } from 'lucide-react';
+import {
+  Mail,
+  Percent,
+  MousePointerClick,
+  Reply,
+  TrendingUp,
+} from 'lucide-react';
+
+import './ColdEmailStats.css'; // Import the external, theme-compatible CSS
 
 const emailStats = [
   { label: 'Emails Sent', value: '3,200', icon: Mail },
@@ -92,121 +100,6 @@ const ColdEmailStats = () => {
           </table>
         </div>
       </div>
-
-      {/* Responsive CSS */}
-      <style>{`
-        .cold-email-container {
-          font-family: Arial, sans-serif;
-          background: #fff;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-          max-width: 900px;
-          margin: 0 auto;
-        }
-
-        h2 {
-          font-size: 24px;
-          margin-bottom: 20px;
-        }
-
-        .stats-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-          gap: 16px;
-          margin-bottom: 30px;
-        }
-
-        .stat-card {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          background: #f9f9f9;
-          padding: 12px 16px;
-          border-radius: 6px;
-          border: 1px solid #eee;
-        }
-
-        .stat-card .label {
-          font-size: 14px;
-          color: #666;
-        }
-
-        .stat-card .value {
-          font-size: 18px;
-          font-weight: bold;
-        }
-
-        .section {
-          margin-top: 30px;
-        }
-
-        h3 {
-          margin-bottom: 10px;
-          font-size: 18px;
-        }
-
-        .table-wrapper {
-          width: 100%;
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        table {
-          width: 100%;
-          border-collapse: collapse;
-          font-size: 14px;
-        }
-
-        table th, table td {
-          padding: 10px;
-          border: 1px solid #ddd;
-          text-align: left;
-          white-space: nowrap;
-        }
-
-        table th {
-          background: #f0f0f0;
-        }
-
-        /* Responsive tweaks */
-        @media (max-width: 768px) {
-          .cold-email-container {
-            padding: 12px;
-          }
-
-          h2 {
-            font-size: 20px;
-          }
-
-          .stat-card {
-            padding: 10px;
-          }
-
-          .stat-card .value {
-            font-size: 16px;
-          }
-
-          table {
-            font-size: 13px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          h2 {
-            font-size: 18px;
-          }
-
-          h3 {
-            font-size: 16px;
-          }
-
-          .stat-card {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-        }
-      `}</style>
     </div>
   );
 };
