@@ -5,7 +5,7 @@ const http = require('http');
 const server = http.createServer(app);
 const PORT = process.env.SERVER_PORT || 8080;
 const cors = require('cors');
-const routes = require("../server/routes");
+const routes = require("../admin-backend/routes/index.js");
 const { dbConnection } = require('./config/db.js');
 const helmet = require('helmet');
 
