@@ -1,14 +1,9 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
-/* index.css */
 :root {
-  /* Colors */
-  /* Absolute Colors */
   --color-white: #ffffff;
   --color-black: #000000;
 
-  /* Orange Shades (Primary Colors) */
   --orange-60: #ce8d63;
   --orange-65: #dc9477;
   --orange-70: #dcab88;
@@ -18,7 +13,6 @@
   --orange-97: #faf1f3;
   --orange-99: #fdfdfb;
 
-  /* Dark Shades */
   --dark-06: #0f0f0f;
   --dark-10: #1a1a1a;
   --dark-12: #1f1f1f;
@@ -28,7 +22,6 @@
   --dark-30: #4d4d4d;
   --dark-40: #595959;
 
-  /* Grey Shades */
   --grey-40: #676b65;
   --grey-50: #81807f;
   --grey-70: #b3b2b2;
@@ -38,55 +31,46 @@
   --grey-97: #f7f7f7;
   --grey-99: #fcfcfc;
 
-  /* Typography */
-  /* Font Families */
   --font-primary: "Roboto Flex", sans-serif;
   --font-mono: "Roboto Mono", monospace;
 
-  /* Font Weights */
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
 
-  /* Font Sizes */
   --text-xs: 0.75rem;
-  /* 12px */
-  --text-sm: 0.875rem;
-  /* 14px */
-  --text-base: 1rem;
-  /* 16px */
-  --text-lg: 1.125rem;
-  /* 18px */
-  --text-xl: 1.25rem;
-  /* 20px */
-  --text-2xl: 1.5rem;
-  /* 24px */
-  --text-3xl: 1.875rem;
-  /* 30px */
-  --text-4xl: 2.25rem;
-  /* 36px */
-  --text-5xl: 3rem;
-  /* 48px */
 
-  /* Line Heights */
+  --text-sm: 0.875rem;
+
+  --text-base: 1rem;
+
+  --text-lg: 1.125rem;
+
+  --text-xl: 1.25rem;
+
+  --text-2xl: 1.5rem;
+
+  --text-3xl: 1.875rem;
+
+  --text-4xl: 2.25rem;
+
+  --text-5xl: 3rem;
+
   --leading-tight: 1.2;
   --leading-normal: 1.5;
   --leading-relaxed: 1.75;
 
-  /* Letter Spacing */
   --tracking-tight: -0.02em;
   --tracking-normal: 0;
   --tracking-wide: 0.05em;
 
-  /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
 
-  /* Border radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
@@ -106,7 +90,7 @@ button {
   padding: var(--spacing-sm) var(--spacing-md);
 }
 
-/* Headings use Roboto Flex */
+
 h1,
 h2,
 h3,
@@ -148,7 +132,7 @@ h6 {
   font-size: var(--text-lg);
 }
 
-/* Body text */
+
 body {
   font-family: var(--font-primary);
   font-size: var(--text-base);
@@ -157,7 +141,7 @@ body {
   letter-spacing: var(--tracking-normal);
 }
 
-/* Code, captions, meta info use Roboto Mono */
+
 code,
 pre,
 .caption,
@@ -168,7 +152,7 @@ pre,
   line-height: var(--leading-relaxed);
 }
 
-/* Icon Base */
+
 .icon {
   display: inline-flex;
   align-items: center;
@@ -181,7 +165,7 @@ pre,
   transition: all 0.3s ease;
 }
 
-/* Variants */
+
 .icon-primary {
   background: var(--orange-65);
   color: var(--color-white);
@@ -203,7 +187,7 @@ pre,
   color: var(--dark-12);
 }
 
-/* Base Button */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -222,7 +206,7 @@ pre,
   border: none;
 }
 
-/* Variants */
+
 .btn-primary {
   background: var(--orange-65);
   color: var(--color-white);
@@ -283,4 +267,183 @@ pre,
   animation: marquee 20s linear infinite;
   align-items: center;
 }
+ */
+@import "tailwindcss";
 
+/* Base Colors & Typography Variables */
+:root {
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Orange Shades (Primary) */
+  --orange-60: #ce8d63;
+  --orange-65: #dc9477;
+  --orange-70: #dcab88;
+  --orange-80: #e0b2a3;
+  --orange-90: #f1ded8;
+  --orange-95: #f9e7dc;
+  --orange-97: #faf1f3;
+  --orange-99: #fdfdfb;
+
+  /* Dark Shades */
+  --dark-06: #0f0f0f;
+  --dark-10: #1a1a1a;
+  --dark-12: #1f1f1f;
+  --dark-15: #262626;
+  --dark-20: #333333;
+  --dark-25: #404040;
+  --dark-30: #4d4d4d;
+  --dark-40: #595959;
+
+  /* Grey Shades */
+  --grey-40: #676b65;
+  --grey-50: #81807f;
+  --grey-70: #b3b2b2;
+  --grey-80: #cacaca;
+  --grey-90: #e6e6e6;
+  --grey-95: #f2f2f2;
+  --grey-97: #f7f7f7;
+  --grey-99: #fcfcfc;
+
+  /* Typography */
+  --font-primary: "Roboto Flex", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+}
+
+/* Body */
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-size: 14px; /* mobile base */
+  background-color: var(--dark-10);
+  color: var(--color-white);
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive Body Font Sizes */
+@media (min-width: 640px) {
+  body {
+    font-size: 15px; /* sm */
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 16px; /* md */
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px; /* lg */
+  }
+}
+
+/* Headings (Responsive) */
+h1 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-size: 2rem; /* mobile */
+}
+@media (min-width: 640px) { h1 { font-size: 2.5rem; } }
+@media (min-width: 768px) { h1 { font-size: 3rem; } }
+@media (min-width: 1024px) { h1 { font-size: 3.5rem; } }
+
+h2 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-size: 1.75rem; /* mobile */
+}
+@media (min-width: 640px) { h2 { font-size: 2rem; } }
+@media (min-width: 768px) { h2 { font-size: 2.25rem; } }
+@media (min-width: 1024px) { h2 { font-size: 2.5rem; } }
+
+h3 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-semibold);
+  line-height: 1.3;
+  font-size: 1.5rem; /* mobile */
+}
+@media (min-width: 640px) { h3 { font-size: 1.75rem; } }
+@media (min-width: 768px) { h3 { font-size: 2rem; } }
+@media (min-width: 1024px) { h3 { font-size: 2.25rem; } }
+
+h4 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-semibold);
+  line-height: 1.3;
+  font-size: 1.25rem; /* mobile */
+}
+@media (min-width: 640px) { h4 { font-size: 1.5rem; } }
+@media (min-width: 768px) { h4 { font-size: 1.75rem; } }
+@media (min-width: 1024px) { h4 { font-size: 2rem; } }
+
+h5 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-medium);
+  line-height: 1.4;
+  font-size: 1.125rem; /* mobile */
+}
+@media (min-width: 640px) { h5 { font-size: 1.25rem; } }
+@media (min-width: 768px) { h5 { font-size: 1.5rem; } }
+
+h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-medium);
+  line-height: 1.4;
+  font-size: 1rem; /* mobile */
+}
+@media (min-width: 640px) { h6 { font-size: 1.125rem; } }
+@media (min-width: 768px) { h6 { font-size: 1.25rem; } }
+
+/* Code & Mono Text */
+code,
+pre,
+.caption,
+.meta {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-medium);
+  font-size: 12px; /* mobile */
+  line-height: 1.5;
+}
+@media (min-width: 640px) { code, pre { font-size: 13px; } }
+@media (min-width: 768px) { code, pre { font-size: 14px; } }
+@media (min-width: 1024px) { code, pre { font-size: 15px; } }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-medium);
+  font-size: 0.875rem; /* mobile */
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+@media (min-width: 640px) { .btn { font-size: 0.95rem; padding: 8px 16px; } }
+@media (min-width: 768px) { .btn { font-size: 1rem; padding: 10px 20px; } }
+@media (min-width: 1024px) { .btn { font-size: 1.125rem; padding: 12px 24px; } }
+
+/* Utility Classes */
+.page-width {
+  max-width: 1920px;
+  width: 100%;
+  padding-inline: 20px;
+  margin: 0 auto;
+  background: var(--dark-10);
+  color: var(--color-white);
+}

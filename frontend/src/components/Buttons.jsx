@@ -13,7 +13,7 @@ export const CircleOutlinedButton = ({ className }) => (
 
 // Twitter Icon
 export const BlackCircleButton = ({ className ,text}) => (
-  <button className="cursor-pointer flex items-center gap-2 px-5 py-2 bg-black text-gray-300 rounded-full text-sm font-medium hover:bg-gray-900 transition">
+  <button className="cursor-pointer flex items-center gap-2 px-5 py-2  text-gray-300 rounded-full text-sm font-medium hover:bg-gray-900 transition">
     <span className="text-[#CE7D63]">
       <UpArrowIcon />
     </span>
@@ -22,7 +22,7 @@ export const BlackCircleButton = ({ className ,text}) => (
 );
 
 export const RoundedRectangle = ({ className }) => (
-  <button className="cursor-pointer flex items-center gap-2 px-6 py-2 bg-black text-white rounded-md text-sm font-medium hover:bg-gray-900 transition">
+  <button className="cursor-pointer flex items-center gap-2 px-6 py-2  text-white rounded-md text-sm font-medium hover:bg-gray-900 transition">
     GET IN TOUCH
     <span className="text-[#CE7D63]">
       <UpArrowIcon />

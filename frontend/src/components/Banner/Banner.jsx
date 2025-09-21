@@ -172,12 +172,167 @@
 //   );
 // }
 
+// import React, { useEffect, useRef } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ArrowRight } from "lucide-react";
+// import { CircleArrowIcon } from "../Icons";
+// import { BlackCircleButton, CircleOutlinedButton } from "../Buttons";
+// import ModelViewer from "../ModelViewer";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// export default function Banner() {
+//   const bannerRef = useRef(null);
+//   const statsRef = useRef(null);
+
+//   useEffect(() => {
+//     const ctx = gsap.context(() => {
+//       // Banner enter animations
+//       gsap.from(".banner-title", {
+//         opacity: 0,
+//         y: 80,
+//         duration: 1.2,
+//         ease: "power3.out",
+//       });
+
+//       gsap.from(".banner-text", {
+//         opacity: 0,
+//         y: 40,
+//         duration: 1,
+//         delay: 0.3,
+//         ease: "power2.out",
+//       });
+
+//       gsap.from(".right-card", {
+//         opacity: 0,
+//         x: 100,
+//         duration: 1.2,
+//         delay: 0.5,
+//         ease: "power3.out",
+//       });
+
+//       // Scroll-based animation for Stats
+//       gsap.from(statsRef.current.querySelectorAll(".stat-card"), {
+//         opacity: 0,
+//         y: 50,
+//         stagger: 0.2,
+//         duration: 1,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: statsRef.current,
+//           start: "top 80%",
+//           toggleActions: "play none none reverse",
+//         },
+//       });
+//     }, bannerRef);
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <section
+//       ref={bannerRef}
+//       className="banner-section bg-[#111] text-white py-10 overflow-hidden"
+//     >
+//       {/* Top Section */}
+//       <div className="grid md:grid-cols-3 gap-6 items-center">
+//         {/* Left Content */}
+//         <div className="md:col-span-2 bg-[#1a1a1a] p-8 rounded-lg shadow-lg min-h-12/12">
+//           <div className="flex align-bottom">
+//             <h1 className="banner-title text-4xl md:text-5xl font-bold leading-tight">
+//               DIGITAL SOLUTIONS <br />
+//               <span className="text-white">THAT DRIVE SUCCESS</span>
+//             </h1>
+//             <CircleOutlinedButton />
+//           </div>
+
+//           <p className="banner-text text-gray-400 mt-16 text-sm mb-20 max-w-[70%]">
+//             At NexGen, we believe in the transformative power of digital
+//             solutions. Our team of experts is dedicated to helping businesses
+//             like yours thrive in the fast-paced digital landscape.
+//           </p>
+
+//           {/* Services Marquee */}
+//           <div className="overflow-hidden relative w-full bg-transparent mt-6">
+//             <div className="marquee flex bg-[#111] gap-4 animate-marquee text-sm tracking-wider text-gray-300 whitespace-nowrap">
+//               <span className="p-4 rounded-lg shadow-lg">MARKETING</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">WEBSITE DESIGN</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">BRANDING</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">WEBSITE DEVELOPMENT</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">MOBILE APP DEVELOPMENT</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">DIGITAL</span>
+//               <span className="p-4 rounded-lg shadow-lg">MARKETING</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">WEBSITE DESIGN</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">BRANDING</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">WEBSITE DEVELOPMENT</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">MOBILE APP DEVELOPMENT</span>
+//               <div className="text-[#CE7D63]">•</div>
+//               <span className="p-4 rounded-lg shadow-lg">DIGITAL</span>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Right Card */}
+//         <div className="right-card bg-[#1a1a1a] p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+//           <div className="relative w-full h-[300px] rounded-lg overflow-hidden">
+//             <ModelViewer />
+//           </div>
+
+//           <div className="mt-4">
+//             <h3 className="text-lg font-semibold">ESTATEIN REAL ESTATE</h3>
+//             <p className="text-sm text-gray-400">Web Development.</p>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Stats Section */}
+//       <div
+//         ref={statsRef}
+//         className="stats-section grid grid-cols-2 md:grid-cols-6 gap-4 mt-10 border border-2 border-[#1A1A1A] p-4 rounded-lg"
+//       >
+//         <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
+//           <p className="text-[#CE7D63] text-6xl font-bold">200+</p>
+//           <p className="text-sm text-gray-400">CLIENTS</p>
+//         </div>
+//         <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
+//           <p className="text-[#CE7D63] text-6xl font-bold">280+</p>
+//           <p className="text-sm text-gray-400">PROJECTS</p>
+//         </div>
+//         <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
+//           <p className="text-[#CE7D63] text-6xl font-bold">100%</p>
+//           <p className="text-sm text-gray-400">HAPPY CLIENTS</p>
+//         </div>
+//         <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
+//           <p className="text-[#CE7D63] text-6xl font-bold">420K</p>
+//           <p className="text-sm text-gray-400">FOLLOWER</p>
+//         </div>
+//         <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
+//           <p className="text-[#CE7D63] text-6xl font-bold">10+</p>
+//           <p className="text-sm text-gray-400">Years Of Experience</p>
+//         </div>
+//         <div className="stat-card bg-[#1a1a1a] rounded-lg text-center flex flex-col justify-center">
+//           <span className="flex items-center justify-center gap-2">
+//             <BlackCircleButton text="Know More" />
+//           </span>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight } from "lucide-react";
-import { CircleArrowIcon } from "../Icons";
 import { BlackCircleButton, CircleOutlinedButton } from "../Buttons";
 import ModelViewer from "../ModelViewer";
 
@@ -234,64 +389,61 @@ export default function Banner() {
   return (
     <section
       ref={bannerRef}
-      className="banner-section bg-[#111] text-white py-10 overflow-hidden"
+      className="banner-section bg-[#111] text-white py-10 px-4 sm:px-6 md:px-6 lg:px-10 overflow-hidden"
     >
       {/* Top Section */}
-      <div className="grid md:grid-cols-3 gap-6 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
         {/* Left Content */}
-        <div className="md:col-span-2 bg-[#1a1a1a] p-8 rounded-lg shadow-lg min-h-12/12">
-          <div className="flex align-bottom">
-            <h1 className="banner-title text-4xl md:text-5xl font-bold leading-tight">
+        <div className="md:col-span-2 bg-[#1a1a1a] p-6 md:p-6 rounded-lg shadow-lg">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <h1 className="banner-title text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
               DIGITAL SOLUTIONS <br />
               <span className="text-white">THAT DRIVE SUCCESS</span>
             </h1>
             <CircleOutlinedButton />
           </div>
 
-          <p className="banner-text text-gray-400 mt-16 text-sm mb-20 max-w-[70%]">
+          <p className="banner-text text-gray-400 mt-6 md:mt-6 text-sm sm:text-base md:text-base mb-6 md:mb-6 lg:mb-20 max-w-full md:max-w-[70%]">
             At NexGen, we believe in the transformative power of digital
             solutions. Our team of experts is dedicated to helping businesses
             like yours thrive in the fast-paced digital landscape.
           </p>
 
           {/* Services Marquee */}
-          <div className="overflow-hidden relative w-full bg-transparent mt-6">
-            <div className="marquee flex bg-[#111] gap-4 animate-marquee text-sm tracking-wider text-gray-300 whitespace-nowrap">
-              <span className="p-4 rounded-lg shadow-lg">MARKETING</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">WEBSITE DESIGN</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">BRANDING</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">WEBSITE DEVELOPMENT</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">MOBILE APP DEVELOPMENT</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">DIGITAL</span>
-              <span className="p-4 rounded-lg shadow-lg">MARKETING</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">WEBSITE DESIGN</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">BRANDING</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">WEBSITE DEVELOPMENT</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">MOBILE APP DEVELOPMENT</span>
-              <div className="text-[#CE7D63]">•</div>
-              <span className="p-4 rounded-lg shadow-lg">DIGITAL</span>
+          <div className="overflow-x-hidden relative w-full bg-transparent mt-4 md:mt-4 lg:mt-6">
+            <div className="flex gap-4 whitespace-nowrap text-sm sm:text-base md:text-base tracking-wider text-gray-300 animate-marquee">
+              {[
+                "MARKETING",
+                "WEBSITE DESIGN",
+                "BRANDING",
+                "WEBSITE DEVELOPMENT",
+                "MOBILE APP DEVELOPMENT",
+                "DIGITAL",
+              ].map((service, idx) => (
+                <React.Fragment key={idx}>
+                  <span className="p-2 sm:p-4 md:p-4 rounded-lg shadow-lg">
+                    {service}
+                  </span>
+                  {idx < 5 && <div className="text-[#CE7D63]">•</div>}
+                </React.Fragment>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Right Card */}
-        <div className="right-card bg-[#1a1a1a] p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
-          <div className="relative w-full h-[300px] rounded-lg overflow-hidden">
+        <div className="right-card bg-[#1a1a1a] p-4 md:p-4 rounded-lg shadow-lg flex flex-col justify-between h-full">
+          <div className="relative w-full h-[250px] sm:h-[300px] md:h-[300px] lg:h-[350px] rounded-lg overflow-hidden">
             <ModelViewer />
           </div>
 
           <div className="mt-4">
-            <h3 className="text-lg font-semibold">ESTATEIN REAL ESTATE</h3>
-            <p className="text-sm text-gray-400">Web Development.</p>
+            <h3 className="text-lg sm:text-xl md:text-xl font-semibold">
+              ESTATEIN REAL ESTATE
+            </h3>
+            <p className="text-sm sm:text-base md:text-base text-gray-400">
+              Web Development.
+            </p>
           </div>
         </div>
       </div>
@@ -299,32 +451,31 @@ export default function Banner() {
       {/* Stats Section */}
       <div
         ref={statsRef}
-        className="stats-section grid grid-cols-2 md:grid-cols-6 gap-4 mt-10 border border-2 border-[#1A1A1A] p-4 rounded-lg"
+        className="stats-section grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-8 sm:mt-8 md:mt-8 lg:mt-10 border border-[#1A1A1A] p-2 sm:p-4 md:p-4 rounded-lg"
       >
-        <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
-          <p className="text-[#CE7D63] text-6xl font-bold">200+</p>
-          <p className="text-sm text-gray-400">CLIENTS</p>
-        </div>
-        <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
-          <p className="text-[#CE7D63] text-6xl font-bold">280+</p>
-          <p className="text-sm text-gray-400">PROJECTS</p>
-        </div>
-        <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
-          <p className="text-[#CE7D63] text-6xl font-bold">100%</p>
-          <p className="text-sm text-gray-400">HAPPY CLIENTS</p>
-        </div>
-        <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
-          <p className="text-[#CE7D63] text-6xl font-bold">420K</p>
-          <p className="text-sm text-gray-400">FOLLOWER</p>
-        </div>
-        <div className="stat-card bg-[#1a1a1a] p-6 rounded-lg text-center">
-          <p className="text-[#CE7D63] text-6xl font-bold">10+</p>
-          <p className="text-sm text-gray-400">Years Of Experience</p>
-        </div>
-        <div className="stat-card bg-[#1a1a1a] rounded-lg text-center flex flex-col justify-center">
-          <span className="flex items-center justify-center gap-2">
-            <BlackCircleButton text="Know More" />
-          </span>
+        {[
+          { value: "200+", label: "CLIENTS" },
+          { value: "280+", label: "PROJECTS" },
+          { value: "100%", label: "HAPPY CLIENTS" },
+          { value: "420K", label: "FOLLOWERS" },
+          { value: "10+", label: "Years Of Experience" },
+        ].map((stat, idx) => (
+          <div
+            key={idx}
+            className="stat-card bg-[#1a1a1a] p-4 sm:p-6 md:p-6 rounded-lg text-center"
+          >
+            <p className="text-[#CE7D63] text-3xl sm:text-5xl md:text-5xl font-bold">
+              {stat.value}
+            </p>
+            <p className="text-sm sm:text-base md:text-base text-gray-400">
+              {stat.label}
+            </p>
+          </div>
+        ))}
+
+        {/* Last Button Card */}
+        <div className="stat-card bg-[#1a1a1a] rounded-lg text-center flex items-center justify-center p-4 sm:p-6 md:p-6">
+          <BlackCircleButton text="Know More" />
         </div>
       </div>
     </section>
