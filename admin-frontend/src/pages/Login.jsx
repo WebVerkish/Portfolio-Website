@@ -62,7 +62,7 @@ export default function Login() {
       localStorage.setItem("admin-user", JSON.stringify(data.result.user));
       // showToast({ content: "Welcome back!", type: "success" });
       toast.success("Welcome back!");
-      navigate("/admin/dashboard");
+      navigate("/");
     } catch (error) {
       // showToast({ content: error.message, error: true });
       toast.error("Invalid login!");
