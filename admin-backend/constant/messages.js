@@ -1,7 +1,8 @@
 
 //Success messages
 module.exports.SuccessMessage = {
-  
+    CONTENT_FETCHED: "Content Fetched Successfully.",
+    CONTENT_UPDATED: "Content Updated Successfully.",
     DATA_FETCHED: "Data Fetched Successfully.",
     SHOP_DETAILS: "Shop Details Fetched.",
     DESIGN_SAVED: "Desings Saved Successfully.",

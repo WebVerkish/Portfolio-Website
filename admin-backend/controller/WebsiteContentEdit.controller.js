@@ -16,19 +16,15 @@ exports.WebsiteGetContent = async (req, res) => {
 
 // Update or create content (for admin panel)
 exports.WebsiteSetContent = async (req, res) => {
-  const updates = req.body;
-
-  
-    await WebsiteContent.findOneAndUpdate(
-      { key },
-      { value },
-      { upsert: true, new: true }
-    );
-  
-
-  // Return plain array so frontend can use .find
-  const content = await WebsiteContent.find({});
-  res.json(content);
+  console.log("Received content to set:", req.body);
+  let content = await WebsiteContent.findOne();
+  if (content) {
+    await WebsiteContent.updateOne({}, req.body);
+  } else {
+    content = new WebsiteContent(req.body);
+    await content.save();
+  }
+  return sendResponse(res, statusCode.OK, true, SuccessMessage.CONTENT_UPDATED);
 };
 
 

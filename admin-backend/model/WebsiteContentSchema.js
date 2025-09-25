@@ -1,10 +1,25 @@
 // models/WebsiteContent.js
-const mongoose = require("mongoose");
+const mongoose  = require('mongoose');
 
-const WebsiteContentSchema = new mongoose.Schema({
-  key: { type: String, required: true, unique: true }, // e.g. "heroTitle"
-  value: { type: String, required: true }
+const projectSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  link: String
 });
 
-const WebsiteContent = mongoose.model("WebsiteContentSchema", WebsiteContentSchema);
+const contentSchema = new mongoose.Schema({
+  heroTitle: String,
+  heroSubtitle: String,
+  aboutMe: String,
+  projects: [projectSchema],
+  skills: [String],
+  contact: {
+    email: String,
+    phone: String,
+    location: String
+  },
+  footerText: String
+}, { timestamps: true });
+
+const WebsiteContent = mongoose.model('WebsiteContent', contentSchema);
 module.exports = WebsiteContent;

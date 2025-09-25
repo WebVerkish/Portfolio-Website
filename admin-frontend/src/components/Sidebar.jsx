@@ -9,6 +9,9 @@ import {
   Mail 
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import Logo from "../images/WebSIteMainLogo.png";
+import '../components/Sidebar.css';
+
 
 const Sidebar = ({ collapsed, setCollapsed }) => {
   const menuItems = [
@@ -25,7 +28,12 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
     <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
       <div className="sidebar-header">
         <div className="logo">
-          {!collapsed && <span>Admin Panel</span>}
+          {!collapsed &&<img 
+            src={Logo} 
+            alt="Logo" 
+            className="admin-main-logo" 
+          />}
+          {/* {!collapsed && <span>Admin Panel</span>} */}
         </div>
         <button 
           className="collapse-btn"
